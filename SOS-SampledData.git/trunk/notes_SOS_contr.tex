@@ -299,7 +299,14 @@ We consider the second model for the Lyapunov function $V$, that is
 $$
 V(x)\coloneqq x_1^\top P x_1+x_2^\top Q(\tau) x_2.
 $$
-Since $P$ has to be positive definite, we impose that $Q(\tau)$ is positive semidefinite for $\tau \in [0,T]$.}
+Since $P$ has to be positive definite, we impose that $Q(\tau)$ is positive semidefinite for $\tau \in [0,T]$,
+which gives a sufficient condition for $V(x)>0$.
+
+We recall that $Q(\tau) = \sum_{i=0}^d Q_i \tau^i$ has degree at most $d$ as polynomial matrix.
+
+
+
+}
 
 
 \begin{thebibliography}{9}

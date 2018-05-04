@@ -302,13 +302,44 @@ $$
 Since $P$ has to be positive definite, we impose that $Q(\tau)$ is positive semidefinite for $\tau \in [0,T]$,
 which gives a sufficient condition for $V(x)>0$.
 
-We recall that $Q(\tau) = \sum_{i=0}^d Q_i \tau^i$ has degree at most $d$ as polynomial matrix.
-
-
-
+We recall that $Q(\tau) = \sum_{i=0}^d Q_i \tau^i$ has degree at most $d$ as polynomial matrix. The following Lemma
+gives a certificate of positivity over $[0,T]$.
+\begin{lem}\label{matrixhandelman}
+  Let $Q=Q(\tau)$ be a symmetric polynomial matrix of degree at most $d$ and positive definite over $[0,T]$.
+  Then UNDER ASSUMPTIONS TO BE CHECKED there exist an integer $N$ and positive definite symmetric matrices
+  $X_\alpha$, for $\alpha=(\alpha_1,\alpha_2)$ with $\alpha_1+\alpha_2=N+d$ such that
+  $$
+  Q = \sum_\alpha X_\alpha \tau^{\alpha_1}(T-\tau)^{\alpha_2}
+  $$
+\end{lem}
+\begin{proof}
+  Remark that $[0,T]$ is convex, compact and defined by the linear inequalities $\tau \geq 0, T-\tau \geq 0$.
+  Then the thesis follows from the Matrix Handelman's Positivstellensatz \cite[Th.3]{handelman}. 
+\end{proof}
+The same theorem \cite[Th.3]{handelman} gives upper bounds for $N$ that are quadratic on $d$.
+We deduce from Lemma \ref{matrixhandelman} that the condition $Q(\tau) \succeq 0$ can be tested by solving
+the linear matrix inequality
+$$
+\begin{aligned}
+  & Q(\tau) = \sum_{\alpha_1+\alpha_2=N+d} X_\alpha \tau^{\alpha_1}(T-\tau)^{\alpha_2} \\
+  &
+  \bigoplus_{\alpha_1+\alpha_2=N+d} X_\alpha \succeq 0.
+\end{aligned}
+$$
+If $Q$ is $m \times m$, then the previous LMI has
+$$
+\text{size } = m(N+d+1)
+$$
+$$
+\text{number of variables } = (N+d+1)\binom{m+1}{2}-\binom{m+1}{2} = (N+d)\binom{m+1}{2}.
+$$
 }
 
 
+
+
+
+\newpage
 \begin{thebibliography}{9}
 
 \bibitem{lasserre}
